@@ -7,7 +7,14 @@ package br.edu.ifro.modelo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  * FXML Controller class
@@ -16,6 +23,9 @@ import javafx.fxml.Initializable;
  */
 public class AlunoController implements Initializable {
 
+    @FXML
+    private AnchorPane txtNome;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +33,24 @@ public class AlunoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+
+    @FXML
+    private void Salvar(ActionEvent event) {
+        EntityManagerFactory enf = Persistence.createEntityManagerFactory("aula");
+        EntityManager em = enf.createEntityManager();
+        aluno aluno1 = new aluno();
+        aluno1.setNome(txtNome.getAccessibleText());
+        
+        em.getTransaction().begin();
+        em.persist(aluno1);
+        em.getTransaction().commit();
+    }
+
+    @FXML
+    private void Fechar(ActionEvent event) {
+   Stage stage = (Stage)  txtNome.getScene().getWindow();
+    stage.close();
 }
+    }
+    
+
