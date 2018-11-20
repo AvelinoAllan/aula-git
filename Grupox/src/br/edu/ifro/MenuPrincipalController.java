@@ -52,7 +52,7 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     private void AbrirCadastroAluno(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/br/edu/ifro/modelo/aluno.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/br/edu/ifro/view/aluno.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),900,682);
         Stage stage = new Stage();
         stage.setTitle("Cadastrar Aluno");
