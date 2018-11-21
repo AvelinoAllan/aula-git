@@ -11,7 +11,8 @@ public class aluno {
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    private String nome;
+    private String Fone;
     public Integer getId() {
         return id;
     }
@@ -27,5 +28,13 @@ public class aluno {
     public void setNome(String nome) {
         this.nome = nome;
     }
- private String nome;
+
+    public String getFone() {
+        return Fone;
+    }
+
+    public void setFone(String Fone) {
+        this.Fone = Fone;
+    }
+
 }

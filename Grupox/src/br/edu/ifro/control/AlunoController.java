@@ -6,11 +6,14 @@
 package br.edu.ifro.control;
 
 import br.edu.ifro.modelo.aluno;
+import br.eti.diegofonseca.MaskFieldUtil;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.persistence.EntityManager;
@@ -26,13 +29,19 @@ public class AlunoController implements Initializable {
 
     @FXML
     private AnchorPane txtNome;
+    @FXML
+    private TextField txtFone;
 
     /**
      * Initializes the controller class.
      */
+    @FXML
+private TextField txtAluno;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       // TODO
+        MaskFieldUtil.foneField(txtFone);
+    
     }    
 
     @FXML
@@ -41,9 +50,14 @@ public class AlunoController implements Initializable {
         EntityManager em = enf.createEntityManager();
         aluno aluno1 = new aluno();
         aluno1.setNome(txtNome.getAccessibleText());
-        
+        //com mascara
+        aluno1.setFone(txtFone.getText());
+        //sem mascara
+        //aluno1.setFone(MaskFieldUtil.onlyAlfaNumericValue(txtFone));
         em.getTransaction().begin();
+        
         em.persist(aluno1);
+        
         em.getTransaction().commit();
     }
 
