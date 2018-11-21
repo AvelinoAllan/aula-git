@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -8,7 +11,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="340.0" prefWidth="529.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifro.MenuPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="340.0" prefWidth="529.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifro.MenuPrincipalController">
     <children>
         <Label fx:id="label" layoutX="240.0" layoutY="193.0" minHeight="16" minWidth="69" />
       <TextField fx:id="textnumero1" layoutX="128.0" layoutY="96.0" />
@@ -24,6 +27,7 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#AbrirCadastroAluno" text="Alunos" />
                   <MenuItem mnemonicParsing="false" onAction="#FecharProjeto" text="Fechar" />
+                  <MenuItem mnemonicParsing="false" onAction="#AbrirCadastroAluno" text="ListagemAlunnos" />
             </items>
           </Menu>
         </menus>

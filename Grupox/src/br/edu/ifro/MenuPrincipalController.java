@@ -60,6 +60,16 @@ public class MenuPrincipalController implements Initializable {
         stage.show();
     }
 
+     @FXML
+    private void AbrirListagem(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/br/edu/ifro/view/ListagemAluno.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),900,682);
+        Stage stage = new Stage();
+        stage.setTitle("Cadastrar Aluno");
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     private void FecharProjeto(ActionEvent event) {
     }
